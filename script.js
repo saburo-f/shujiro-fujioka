@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 {
-  "redirects"; [
+  "redirects": [
     {
       "source": "/index.html",
       "destination": "/",
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "permanent": true
     }
   ],
-  "rewrites"; [
+  "rewrites": [
     {
       "source": "/profile",
       "destination": "/profile.html"
@@ -45,3 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   ]
 }
+
