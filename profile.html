@@ -105,5 +105,26 @@
       });
     });
   </script>
+
+  <script>
+    // ページが切り替わるときに動的にCSSを変更
+    document.querySelectorAll('[data-target]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('data-target');
+        
+        // Profileのときにstyles_sub.cssを適用
+        if (target === 'profile') {
+          document.getElementById('dynamic-css').setAttribute('href', 'styles_sub.css');
+        } else {
+          document.getElementById('dynamic-css').setAttribute('href', 'styles.css');
+        }
+  
+        // ページ内容の切り替え
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
