@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shujiro Fujioka's HP</title>
     <meta name="description" content="藤岡 秀二郎（ふじおか しゅうじろう）・九州大学 大学院工学府 土木工学専攻 博士後期課程">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" id="dynamic-css">
     <link rel="icon" href="/fujioka.ico" type="image/x-icon">
 </head>
 <body>
@@ -15,8 +15,6 @@
                 <source src="wave_compress.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        </div>
-        <div class="left">
             <div class="header">
                 <h1 class="japanese-name">藤岡 秀二郎</h1>
                 <h1 class="english-name">Shujiro Fujioka</h1>
@@ -44,7 +42,7 @@
         </div>
     </header>
 
-    <div class="subpage" id="profile">
+    <div class="subpage page" id="profile">
         <h1>Profile</h1>
         <div class="profile-box">
             <div class="profile-image">
@@ -73,6 +71,16 @@
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div class="subpage page" id="publication">
+        <h1>Publication</h1>
+        <!-- Publication content goes here -->
+    </div>
+
+    <div class="subpage page" id="contact">
+        <h1>Contact</h1>
+        <!-- Contact content goes here -->
     </div>
 
     <script src="vercel.json"></script>
