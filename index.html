@@ -1,145 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shujiro Fujioka's HP</title>
-  <meta name="description" content="藤岡 秀二郎・九州大学 大学院工学府 土木工学専攻 博士後期課程" />
-  <link id="dynamic-css" rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="/fujioka.ico" type="image/x-icon" />
-  <style>
-    /* ここに簡単なページ切り替えCSS */
-    .page { display: none; }
-    .page.active { display: block; }
-    /* タブのスタイル */
-    .tabs {
-      display: flex;
-      justify-content: space-around;
-      border-bottom: 2px solid #ccc;
-    }
-    .tabs a {
-      padding: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      color: #333;
-    }
-    .tabs a.active {
-      border-bottom: 2px solid #007bff;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shujiro Fujioka's HP</title>
+    <meta name="description" content="藤岡 秀二郎（ふじおか しゅうじろう）・九州大学 大学院工学府 土木工学専攻 博士後期課程">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/fujioka.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="container">
-    <!-- 背景動画 -->
-    <div class="video-background">
-      <video autoplay muted loop playsinline poster="wave_poster.jpg" id="bg-video">
-        <source src="wave_compress.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-    <!-- 左側 -->
-    <div class="left">
-      <div class="header">
-        <h1 class="japanese-name">藤岡 秀二郎</h1>
-        <h1 class="english-name">Shujiro Fujioka</h1>
-      </div>
-      <div class="footer">
-        <div class="links">
-          <ul>
-            <li><a href="#" data-target="profile" class="tab-link">Profile</a></li>
-            <li><a href="#" data-target="publication" class="tab-link">Publication</a></li>
-            <li><a href="#" data-target="contact" class="tab-link">Contact</a></li>
-          </ul>
+    <div class="container">
+        <div class="video-background">
+            <video autoplay muted loop playsinline poster="wave_poster.jpg" id="bg-video">
+                <source src="wave_compress.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-      </div>
-    </div>
-
-    <!-- 右側（中身が切り替わる） -->
-    <div class="right" id="content">
-      <!-- タブ切り替え部分 -->
-      <div class="tabs">
-        <a href="#" data-target="profile" class="tab-link active">Profile</a>
-        <a href="#" data-target="publication" class="tab-link">Publication</a>
-        <a href="#" data-target="contact" class="tab-link">Contact</a>
-      </div>
-
-      <!-- Profile -->
-      <div id="profile" class="page active">
-        <h1>Profile</h1>
-        <div class="profile-box">
-          <div class="profile-image">
-            <img src="profile.jpg" alt="Shujiro Fujioka Profile Photo" />
-          </div>
-          <div class="profile-text">
-            <h2>氏名 | Name</h2>
-            <ul>
-              <li>藤岡 秀二郎 | Shujiro Fujioka</li>
-            </ul>
-            <h2>所属 | Affiliation</h2>
-            <ul>
-              <li>
-                九州大学大学院工学府土木工学専攻博士後期課程 <br />
-                Ph.D. in Engineering, Kyushu University
-              </li>
-              <li>
-                <a href="https://saigaisuuriken-hp-main.vercel.app/" target="_blank">災害数理研究室</a> |
-                Disaster Informatics Laboratory
-              </li>
-            </ul>
-            <h2>所属学会 | Academic Societies</h2>
-            <ul>
-              <li>
-                <a href="https://www.jsce.or.jp/" target="_blank">公益社団法人 土木学会</a> <br />
-                Japan Society of Civil Engineers (JSCE)
-              </li>
-              <li>
-                <a href="https://www.jsces.org/" target="_blank">一般社団法人 日本計算工学会</a> <br />
-                Japan Society for Computational Engineering and Science (JSCES)
-              </li>
-            </ul>
-          </div>
+        <div class="left">
+            <div class="header">
+                <h1 class="japanese-name">藤岡 秀二郎</h1>
+                <h1 class="english-name">Shujiro Fujioka</h1>
+            </div>
+            <div class="footer">
+                <div class="links">
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Publication（今は仮） -->
-      <div id="publication" class="page">
-        <h1>Publication</h1>
-        <p>ここにPublicationの内容を入れてください。</p>
-      </div>
-
-      <!-- Contact（今は仮） -->
-      <div id="contact" class="page">
-        <h1>Contact</h1>
-        <p>ここにContactの内容を入れてください。</p>
-      </div>
     </div>
-  </div>
-
-  <script>
-    // メニュークリックで中身だけ切り替える
-    document.querySelectorAll('.tab-link').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        // タブのアクティブ状態を切り替える
-        document.querySelectorAll('.tab-link').forEach(tab => tab.classList.remove('active'));
-        this.classList.add('active');
-
-        // ページ内容の切り替え
-        const target = this.getAttribute('data-target');
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(target).classList.add('active');
-
-        // CSSファイルの切り替え
-        if (target === 'profile') {
-          document.getElementById('dynamic-css').setAttribute('href', 'styles_sub.css');
-        } else {
-          document.getElementById('dynamic-css').setAttribute('href', 'styles.css');
-        }
-      });
-    });
-  </script>
+    <script src="vercel.json"></script>
 </body>
 </html>
