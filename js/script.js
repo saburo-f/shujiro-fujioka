@@ -8,6 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 {
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/profile",
+      "destination": "/profile.html"
+    },
+    {
+      "source": "/publication",
+      "destination": "/publication.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/index.html",
@@ -28,20 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
       "source": "/contact.html",
       "destination": "/contact",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/profile",
-      "destination": "/profile.html"
-    },
-    {
-      "source": "/publication",
-      "destination": "/publication.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact.html"
     }
   ]
 }
