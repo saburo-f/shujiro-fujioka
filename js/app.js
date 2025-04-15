@@ -20,6 +20,10 @@ document.querySelectorAll('[data-target]').forEach(link => {
 
         // セクションの表示切り替え
         toggleVisibility(target);
+
+        // URLを変更（ページ遷移を模倣）
+        const newUrl = `https://shujiro-fujioka.vercel.app/${target}`;
+        history.pushState({ target: target }, '', newUrl);
     });
 });
 
@@ -52,6 +56,12 @@ function toggleVisibility(target) {
     }
 }
 
-let currentPage; // グローバルに定義
+// ブラウザの「戻る」ボタンや「進む」ボタンに対応するための処理
+window.addEventListener('popstate', function(event) {
+    const target = event.state ? event.state.target : 'home'; // デフォルトは home
+    toggleVisibility(target);
 
-
+    // CSSの変更（ブラウザの履歴に基づく）
+    const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
+    document.getElementById('dynamic-css').setAttribute('href', newCss);
+});
