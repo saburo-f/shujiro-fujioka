@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shujiro Fujioka's HP</title>
     <meta name="description" content="藤岡 秀二郎（ふじおか しゅうじろう）・九州大学 大学院工学府 土木工学専攻 博士後期課程">
-    <link rel="stylesheet" href="styles.css" id="dynamic-css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/fujioka.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container" id="home">
+    <div class="container">
         <div class="video-background">
             <video autoplay muted loop playsinline poster="wave_poster.jpg" id="bg-video">
                 <source src="wave_compress.mp4" type="video/mp4">
@@ -24,92 +24,14 @@
             <div class="footer">
                 <div class="links">
                     <ul>
-                        <li><a href="#profile" data-target="profile">Profile</a></li>
-                        <li><a href="#publication" data-target="publication">Publication</a></li>
-                        <li><a href="#contact" data-target="contact">Contact</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-    <header>
-        <div class="left">
-            <a href="#" data-target="home">Home</a>
-        </div>
-        <div class="right">
-            <a href="#profile" data-target="profile">Profile</a>
-            <a href="#publication" data-target="publication">Publication</a>
-            <a href="#contact" data-target="contact">Contact</a>
-        </div>
-    </header>
-
-    <div class="subpage" id="profile">
-        <h1>Profile</h1>
-        <div class="profile-box">
-            <div class="profile-image">
-                <img src="profile.jpg" alt="Shujiro Fujioka Profile Photo">
-            </div>
-            <div class="profile-text">
-                <!-------------------- 氏名 -------------------->
-                <h2>氏名 | Name</h2>
-                <ul>
-                    <li>藤岡 秀二郎 | Shujiro Fujioka</li>
-                </ul>
-                <!-------------------- 所属 -------------------->
-                <h2>所属 | Affiliation</h2>
-                <ul>
-                    <li>九州大学大学院工学府土木工学専攻博士後期課程 <br>
-                        Ph.D. in Engineering, Kyushu University</li>
-                    <li><a href="https://saigaisuuriken-hp-main.vercel.app/" target="_blank">災害数理研究室</a> | Disaster Informatics Laboratory</li>
-                </ul>
-                <!-------------------- 学会 -------------------->
-                <h2>所属学会 | Academic Societies</h2>
-                <ul>
-                    <li><a href="https://www.jsce.or.jp/" target="_blank">公益社団法人 土木学会</a> <br>
-                        Japan Society of Civil Engineers (JSCE)</li>
-                    <li><a href="https://www.jsces.org/" target="_blank">一般社団法人 日本計算工学会</a> <br>
-                        Japan Society for Computational Engineering and Science (JSCES)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="subpage" id="publication">
-        <h1>Publication</h1>
-        <!-- Publication content goes here -->
-    </div>
-
-    <div class="subpage" id="contact">
-        <h1>Contact</h1>
-        <!-- Contact content goes here -->
-    </div>
-
     <script src="vercel.json"></script>
-    <script>
-        // ページが切り替わるときに動的にCSSを変更
-        document.querySelectorAll('[data-target]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = this.getAttribute('data-target');
-                
-                // Profileのときにstyles_sub.cssを適用
-                if (target === 'profile') {
-                    document.getElementById('dynamic-css').setAttribute('href', 'styles_sub.css');
-                    document.getElementById('home').style.display = 'none';
-                } else if (target === 'home') {
-                    document.getElementById('dynamic-css').setAttribute('href', 'styles.css');
-                    document.getElementById('home').style.display = 'block';
-                } else {
-                    document.getElementById('dynamic-css').setAttribute('href', 'styles_sub.css');
-                    document.getElementById('home').style.display = 'none';
-                }
-                
-                // ページ内容の切り替え
-                document.querySelectorAll('.subpage').forEach(p => p.classList.remove('active'));
-                document.getElementById(target).classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>
