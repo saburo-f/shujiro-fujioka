@@ -97,9 +97,12 @@
                 if (target === 'profile') {
                     document.getElementById('dynamic-css').setAttribute('href', 'styles_sub.css');
                     document.getElementById('home').style.display = 'none';
-                } else {
+                } else if (target === 'home') {
                     document.getElementById('dynamic-css').setAttribute('href', 'styles.css');
                     document.getElementById('home').style.display = 'block';
+                } else {
+                    document.getElementById('dynamic-css').setAttribute('href', 'styles_sub.css');
+                    document.getElementById('home').style.display = 'none';
                 }
                 
                 // ページ内容の切り替え
