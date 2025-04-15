@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 {
-  "rewrites": [
+  "rewrites"; [
     {
       "source": "/",
       "destination": "/index.html"
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "destination": "/contact.html"
     }
   ],
-  "redirects": [
+  "redirects"; [
     {
       "source": "/index.html",
       "destination": "/",
@@ -49,3 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   ]
 }
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('script.js is loaded');
+  // 他のコードがここに続きます
+});
