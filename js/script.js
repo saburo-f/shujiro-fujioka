@@ -1,14 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menuItems = document.querySelector('.menu-items');
-
-  menuToggle.addEventListener('click', function() {
-    menuItems.classList.toggle('show');
-  });
-});
-
 {
-  "rewrites"; [
+  "rewrites": [
     {
       "source": "/",
       "destination": "/index.html"
@@ -26,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "destination": "/contact.html"
     }
   ],
-  "redirects"; [
+  "redirects": [
     {
       "source": "/index.html",
       "destination": "/",
