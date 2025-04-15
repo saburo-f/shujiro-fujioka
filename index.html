@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shujiro Fujioka's HP</title>
     <meta name="description" content="藤岡 秀二郎（ふじおか しゅうじろう）・九州大学 大学院工学府 土木工学専攻 博士後期課程">
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/fujioka.ico" type="image/x-icon">
+    <link id="dynamic-css" rel="stylesheet" href="styles.css">    
 </head>
 <body>
-    <div class="container">
+<!------------------------------------------------------------------- home ------------------------------------------------------------------->
+    <div id = 'home' class="subpage">
         <div class="video-background">
             <video autoplay muted loop playsinline poster="wave_poster.jpg" id="bg-video">
                 <source src="wave_compress.mp4" type="video/mp4">
@@ -24,14 +25,198 @@
             <div class="footer">
                 <div class="links">
                     <ul>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="publication.html">Publication</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#" data-target='profile'>Profile</a></li>
+                        <li><a href="#" data-target='publication'>Publication</a></li>
+                        <li><a href="#" data-target='contact'>Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <script src="vercel.json"></script>
+<!------------------------------------------------------------------- profile ------------------------------------------------------------------->
+    <div id = 'profile' class="subpage">
+        <header>
+            <div class="left">
+                <a href="#" data-target='home'>Home</a>
+            </div>
+            <div class="right">
+                <a href="#" data-target='profile'>Profile</a>
+                <a href="#" data-target='publication'>Publication</a>
+                <a href="#" data-target='contact'>Contact</a>
+            </div>
+        </header>
+
+        <h1>Profile</h1>
+        <div class="profile-box">
+            <div class="profile-image">
+                <img src="profile.jpg" alt="Shujiro Fujioka Profile Photo">
+            </div>
+            <div class="profile-text">
+            <!-------------------- 氏名 -------------------->
+            <h2>氏名 | Name</h2>
+            <ul>
+                <li>藤岡 秀二郎 | Shujiro Fujioka</li>
+            </ul>
+            <!-------------------- 所属 -------------------->
+            <h2>所属 | Affiliation</h2>
+            <ul>
+            <li>九州大学大学院工学府土木工学専攻博士後期課程 <br>
+                Ph.D. in Engineering, Kyushu University</li>
+            <li><a href="https://saigaisuuriken-hp-main.vercel.app/" target="_blank">災害数理研究室</a> | Disaster Informatics Laboratory</li>
+            </ul>
+            <!-------------------- 学会 -------------------->
+            <h2>所属学会 | Academic Societies</h2>
+                <ul>
+                    <li><a href="https://www.jsce.or.jp/" target="_blank">公益社団法人 土木学会</a> <br>
+                        Japan Society of Civil Engineers (JSCE)</li>
+                    <li><a href="https://www.jsces.org/" target="_blank">一般社団法人 日本計算工学会</a> <br>
+                        Japan Society for Computational Engineering and Science (JSCES)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!------------------------------------------------------------------- publication ------------------------------------------------------------------->
+    <div id='publication' class="subpage">
+        <header>
+            <div class="left">
+                <a href="#" data-target='home'>Home</a>
+            </div>
+            <div class="right">
+                <a href="#" data-target='profile'>Profile</a>
+                <a href="#" data-target='publication'>Publication</a>
+                <a href="#" data-target='contact'>Contact</a>
+            </div>
+        </header>        
+        <h1>Publications</h1>
+        <div class="others-box">
+            <div class="others-text">
+                <!------------------------------------------- 査読有り論文 ------------------------------------------->
+                <h2>査読有り論文 | Refereed Papers</h2>
+                <ul>
+                    <li>Tsuji, K., <strong class="underline">Fujioka, S.</strong>, Morikawa, D. S. and Asai, M.: A reliable SPH (2) formulation for Darcy–Forchheimer–Brinkman equation using a density-based particle shifting in the ALE description, <i>Computational Particle Mechanics</i>. pp.1-29, 2024. (doi: <a href="https://doi.org/10.1007/s40571-024-00856-2" target="_blank">https://<wbr>doi.org/<wbr>10.1007/<wbr>s40571-024-00856-2</a>)</li>
+                    <li>白神嘉也，<strong class="underline">藤岡秀二郎</strong>，辻勲平，浅井光輝：安定かつ高精度な粒子法の実現に向けた密度補正機能付き粒子再配列法，日本計算工学論文集，Vol. 2024，No. 1, p. 20241007，2024．(doi: <a href="https://doi.org/10.11421/jsces.2024.20241007" target="_blank">https://<wbr>doi.org/<wbr>10.11421/<wbr>jsces.2024.20241007</a>)  [Shirakami, Y., <strong class="underline">Fujioka, S.</strong>, Tsuji, K. and Asai, M.: Particle shifting with density invariant correction for stable and reliable particle simulations of free surface flow, <i>Transactions of the Japan Society for Computational Engineering and Science</i>, Vol. 2024, No. 1, p.20241007, 2024.]</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>，辻勲平，三目直登，浅井光輝：空間 2 次精度を有する SPH(2)を用いた座標変換による底面境界適合型粒子法，土木学会論文集，Vol. 80，No. 15，p.23-15017，2023．(doi: <a href="https://doi.org/10.2208/jscejj.23-15017" target="_blank">https://<wbr>doi.org/<wbr>10.2208/<wbr>jscejj.23-15017</a>)  [<strong class="underline">Fujioka, S.</strong>, Tsuji, K., Mitsume, N. and Asai, M.: Bottom boundary-fitted particle method with coordinate transformation using SPH(2) with spatioal 2nd-order accuracy, <i>Japanese Journal of JSCE</i>, Vol. 80, No. 15, p.23-15017, 2023.]</li>
+                    <li>Asai, M., <strong class="underline">Fujioka, S.</strong>,  Saeki, Y., Morikawa, D. S. and Tsuji, K.: A class of second-derivatives in the Smoothed Particle Hydrodynamics with 2nd-order accuracy and its application to incompressible flow simulations., <i>Computer Methods in Applied Mechanics and Engineering</i>, Vol. 415, p. 116203, 2023. (doi: <a href="https://doi.org/10.1016/j.cma.2023.116203" target="_blank">https://<wbr>doi.org/<wbr>10.1016/<wbr>j.cma.2023.116203</a>)</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>，辻勲平，浅井光輝：高精度SPH法 ～空間2次精度の勾配・ラプラシアン・混合微分～，土木学会論文集，Vol. 79，No. 15，p.22-15019，2023．(doi: <a href="https://doi.org/10.2208/jscejj.22-15019" target="_blank">https://<wbr>doi.org/<wbr>10.2208/<wbr>jscejj.22-15019</a>)  [<strong class="underline">Fujioka, S.</strong>, Tsuji, K. and Asai, M.: High-order SPH method with spatial second-order accuracy for gradient, Laplacian and mixed derivative, <i>Japanese Journal of JSCE</i>, Vol. 79, No. 15, p.22-15019, 2023.]</li>
+                </ul>
+                <!------------------------------------------- 査読無し論文 ------------------------------------------->
+                <h2>査読無し論文 | Non-Refereed Papers</h2>
+                <ul>
+                    <li>菖蒲迫健介, 吉田茂生, 浅井光輝, 川田佳史, 中島涼輔, <strong class="underline">藤岡秀二郎</strong>：最小二乗法を用いたSPH法の高精度化について計算工学講演会論文集 (Proceedings of the Conference on Computational Engineering and Science)，Vol. 29，pp. 809-814，2024.</li>
+                    <li>白神嘉也，<strong class="underline">藤岡秀二郎</strong>，辻勲平，浅井光輝：密度補正機能付き粒子再配列法による自由表面流れ解析，計算工学講演会論文集 (Proceedings of the Conference on Computational Engineering and Science)，Vol. 29，pp. 781-786，2024.</li>
+                    <li>辻勲平，<strong class="underline">藤岡秀二郎</strong>，森川ダニエル，浅井光輝：密度保存型シフティングを用いたSPH(2)による非一様な間隙率分布を有する浸透流解析，計算工学講演会論文集 (Proceedings of the Conference on Computational Engineering and Science)，Vol. 29，pp. 793-798，2024.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>，辻勲平，三目直登，浅井光輝：高精度粒子法SPH(2)を用いた座標変換による効率的な自由表面解析，計算工学講演会論文集 (Proceedings of the Conference on Computational Engineering and Science)，Vol. 29，pp. 799-804，2024.</li>
+                    <li><strong class="underline">Fujioka, S.</strong>, Tsuji, K., Mitsume, N. and Asai, M.: Bottom boundary-fitted free surface flow simulation with coordinate transformation using SPH(2)，in: particles2023. URL <a href="https://www.scipedia.com/public/Fujioka_et_al_2023a" target="_blank">https://<wbr>www.scipedia.com/<wbr>public/<wbr>Fujioka_et_al_2023a</a></li>
+                    <li>白神嘉也，<strong class="underline">藤岡秀二郎</strong>，浅井光輝：空間2次精度を有するSPHの開発と流体解析への適用 ～自由表面流への適用～，計算工学講演会論文集 (Proceedings of the Conference on Computational Engineering and Science)，Vol. 28，pp. 1245-1248，2023.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>，佐伯勇輔，森川ダニエル，辻勲平，浅井光輝：空間2次精度を有するSPHの開発と流体解析への適用 ～定式化とV&V～，計算工学講演会論文集 (Proceedings of the Conference on Computational Engineering and Science)，Vol. 28，pp. 1239-1244，2023.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>，辻勲平，浅井光輝：SPHの高精度ラプラシアン・混合微分に関する考察，計算工学講演会論文集 (Proceedings of the Conference on Computational Engineering and Science)，Vol. 27，pp. 71-74，2022.</li>
+                </ul>
+                <!------------------------------------------- 国際学会 ------------------------------------------->
+                <h2>国際学会 | International Conferences (*: Presenter)</h2>
+                <!------ 2024 ------>
+                <h3>FY 2024 (April 2024 - March 2025)</h3>
+                <ul>
+                    <li>Tsuji, K.*, <strong class="underline">Fujioka, S.</strong>, Morikawa, D. S. and Asai, M.: Advanced resolved-unresolved SPH-DEM coupling approach with SPH(2) and particle shifting techniques, IWACOM-IV(International Workshops on Advanced of Computational Mechanics), Kita-Kyushu, 2024.09.</li>
+                    <li>Tsuji, K.*, <strong class="underline">Fujioka, S.</strong>, Morikawa, D. S. and Asai, M.: The hybrid resolved-unresolved SPH(2)-DEM coupling simulation for the internal soil-erosion in soil-structures, 16th WCCM, Vancouver, Canada, 2024.07.</li>
+                    <li>Shirakami, Y.*, <strong class="underline">Fujioka, S.</strong>, Tsuji, K., Morikawa, D. S. and Asai, M.: Improved Density-based Particle Shifting Technique for stable and accurate free surface flow simulations based on SPH(2), 16th WCCM, Vancouver, Canada, 2024.07.</li>
+                    <li><strong class="underline">Fujioka, S.</strong>*, Tsuji, K., Mitsume, N. and Asai, M.: Coordinate transformation based on SPH(2) for efficient free surface flow simulation, 16th WCCM, Vancouver, Canada, 2024.07.</li>
+                </ul>
+                <!------ 2023 ------>
+                <h3>FY 2023</h3>
+                <ul>
+                    <li>Asai, M.*, <strong class="underline">Fujioka, S.</strong>, Tsuji, K. and Morikawa, D. S.: New 2nd order particle simulation model ISPH(2) and its application to complex disaster simulation, ACM 2023, Austin, Texas, USA, 2023.10.</li>
+                    <li><strong class="underline">Fujioka, S.</strong>*, Tsuji, K., Mitsume, N. and Asai, M.: Bottom Boundary-Fitted Free Surface Flow Simulation with Coordinate Transformation Using SPH(2), PARTICLES 2023, Milan, Italy, 2023.10.</li>
+                    <li>Saeki, Y.*, <strong class="underline">Fujioka, S.</strong>, Tsuji, K. and Asai, M.: Improvement of ISPH-DEM Coupling Simulator Using SPH(2), PARTICLES 2023, Milan, Italy, 2023.10.</li>
+                </ul>
+                <!------ 2022 ------>
+                <h3>FY 2022</h3>
+                <ul>
+                    <li><strong class="underline">Fujioka, S.</strong>*, Tsuji, K. and Asai, M.: High-order SPH method with spatial second-order accuracy for derivative operator, ICCCI 2022, Yamanashi, Japan, 2022.11. (Poster presentation)</li>
+                    <li>Tsuji, K.*, Saeki, Y., <strong class="underline">Fujioka, S.</strong>, and Asai, M.*: A Hybrid ISPH-DEM Coupling Simulation for Estimating Internal Erosion in Soil, MFEM 2022, Berkeley,, California, USA, 2022.09.</li>
+                    <li>Saeki, Y., <strong class="underline">Fujioka, S.</strong>, Tsuji, K. and Asai, M.*: A Class of Higher Order Derivative Models in the Smoothed Particle Hydrodynamics, MFEM 2022, Berkeley, California, USA, 2022.09.</li>
+                    <li>Asai, M.* and <strong class="underline">Fujioka, S.</strong>: A class of Laplacian and mixed derivative models in the SPH framework, WCCM-APCOM2022, Yokohama, Japan, 2022.08. [Keynote lecture]</li>
+                </ul>
+                <!------------------------------------------- 国内学会 ------------------------------------------->
+                <h2>国内学会 | Domestic Conferences (*: Presenter)</h2>
+                <!------ 2024 ------>
+                <h3>FY 2024 (April 2024 - March 2024)</h3>
+                <ul>
+                    <li>松永幸大*, <strong class="underline">藤岡秀二郎</strong>, 辻勲平, 浅井光輝：壁境界条件を含む空間離散化スキームのLSSPH法への適用，令和6年度土木学会西部支部研究発表会，沖縄，2024.03.</li>
+                    <li>鈴木新之助*, 井上恵天, <strong class="underline">藤岡秀二郎</strong>, 辻勲平, 浅井光輝：SPH(2)と密度保存型粒子再配列法を併用した高精度浸透流解析，令和6年度土木学会全国大会第79回年次学術講演会，宮城，2024.09.</li>
+                    <li>白神嘉也*，<strong class="underline">藤岡秀二郎</strong>，辻勲平，浅井光輝：SPH法における密度補正機能付き粒子再配列法による流体解析，令和6年度土木学会全国大会第79回年次学術講演会，宮城，2024.09.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，三目直登，浅井光輝：高精度粒子法SPH(2)による座標変換を適用した流体解析，令和6年度土木学会全国大会第79回年次学術講演会，宮城，2024.09.</li>
+                    <li>白神嘉也*，<strong class="underline">藤岡秀二郎</strong>，辻勲平，浅井光輝：体積保存性を考慮した粒子再配列法による自由表面流れ解析，第29回計算工学講演会，兵庫，2024.06.</li>
+                    <li>菖蒲迫健介*, 吉田茂生, 浅井光輝, 川田佳史, 中島涼輔, <strong class="underline">藤岡秀二郎</strong>：最小二乗法を用いたSPH法の高精度化について，第29回計算工学講演会，兵庫，2024.06.</li>
+                    <li>辻勲平*，<strong class="underline">藤岡秀二郎</strong>，森川ダニエル，浅井光輝：密度保存型シフティングを用いたSPH(2)による非一様な間隙率分布を有する浸透流解析，第29回計算工学講演会，兵庫，024.06.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，三目直登，浅井光輝：高精度粒子法SPH(2)を用いた座標変換による効率的な自由表面解析，第29回計算工学講演会，兵庫，2024.06.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，三目直登，浅井光輝：高精度粒子法SPH(2)で具現化する鉛直座標変換の一般化，第27回応用力学シンポジウム, 岡山，2024.05.（<strong class="underline">応用力学シンポジウム講演賞</strong>）</li>
+                </ul>
+                <!------ 2023 ------>
+                <h3>FY 2023</h3>
+                <ul>
+                    <li><strong class="underline">藤岡秀二郎</strong>*：空間2次精度を有するSPH(2)による高精度SPH法，JSCES 夏季学生講演会2023，つくば，2023.09.(ポスター発表)（<strong class="underline">優秀ポスター賞</strong>）</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，三目直登，浅井光輝：SPH(2)による境界適合型粒子法の高精度化，令和5年度土木学会全国大会 第78回年次学術講演会，広島，2023.09.（<strong class="underline">優秀講演者賞</strong>）</li>
+                    <li>白神嘉也*，<strong class="underline">藤岡秀二郎</strong>，浅井光輝：空間2次精度を有するI-SPH(2)による孤立波解析，令和5年度土木学会全国大会 第78回年次学術講演会，広島，2023.09.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，佐伯勇輔，森川ダニエル，辻勲平，浅井光輝：空間2次精度を有するSPHの開発と流体解析への適用～定式化とV&V～，第28回計算工学講演会，つくば，2023.06.</li>
+                    <li>白神嘉也*，<strong class="underline">藤岡秀二郎</strong>，浅井光輝：空間2次精度を有するSPHの開発と流体解析への適用～自由表面流れへの適用～，第28回計算工学講演会，つくば，2023.06.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，三目直登，浅井光輝：座標変換を有する底面適合型粒子法のSPH(2)による高精度化，第26回応用力学シンポジウム，東京，2023.05.</li>
+                    <li>白神嘉也*，<strong class="underline">藤岡秀二郎</strong>，浅井光輝：空間2次精度を有するI-SPH(2)による自由表面非圧縮流れ解析，第26回応用力学シンポジウム，東京，2023.05.</li>
+                </ul>
+                <!------ 2022 ------>
+                <h3>FY 2022</h3>
+                <ul>
+                    <li>白神嘉也*，<strong class="underline">藤岡秀二郎</strong>，浅井光輝：2次精度を有する高精度SPH法による自由表面解析，令和5年度土木学会西部支部研究発表会（熊本県），2023.03.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，浅井光輝：SPHにおける高精度2階微分モデルの検討，令和4年度土木学会全国大会第77回年次学術講演会，京都，2022.09.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，浅井光輝：SPHにおける高精度ラプラシアン・混合微分に関する考察，第27回計算工学講演会，秋田，2022.06.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，辻勲平，浅井光輝：初期粒子間隔（空間）の2次精度を有する高精度SPH法，第25回応用力学シンポジウム，Online，2022.05.</li>
+                </ul>
+                <!------ 2021 ------>
+                <h3>FY 2021</h3>
+                <ul>
+                    <li><strong class="underline">藤岡秀二郎</strong>*，浅井光輝：σ-SPH法による効率的な広域氾濫解析に向けた基礎検討，令和3年度土木学会西部支部研究発表会，Online，2022.03.</li>
+                </ul>
+                <!------------------------------------------- 招待講演 ------------------------------------------->
+                <h2>招待講演 | Invited Talks</h2>
+                <ul>
+                    <li><strong class="underline">藤岡秀二郎</strong>*：高精度粒子法SPH(2)と座標変換の適用による計算効率の向上，日本計算工学会 夏季学生講演会 2024，茨城，2024.09.</li>
+                    <li>Asai, M.*, <strong class="underline">Fujioka, S.</strong> and Morikawa, D. S.: A high-performance particle simulator based on SPH(2) accelerating with a geometric multi-grid solver, IWACOM-IV(International Workshops on Advanced of Computational Mechanics), Kita-Kyushu, 2024.09.</li>
+                    <li><strong class="underline">藤岡秀二郎</strong>*：マルチ解像度SPH法による広域津波解析に向けた基礎検討，第8回 マルチメソッド・新数値解析手法開拓研究会，Online，2024.03.</li>
+                </ul>
+                <!------------------------------------------- 国内学会 ------------------------------------------->
+                <!-- <h2>受賞歴 | Awards</h2> -->
+            </div>
+        </div>
+    </div>    
+<!------------------------------------------------------------------- contact ------------------------------------------------------------------->
+    <div class="subpage" id='contact'>
+        <header>
+            <div class="left">
+                <a href="#" data-target='home'>Home</a>
+            </div>
+            <div class="right">
+                <a href="#" data-target='profile'>Profile</a>
+                <a href="#" data-target='publication'>Publication</a>
+                <a href="#" data-target='contact'>Contact</a>
+            </div>
+        </header>
+        <h1>Contact</h1>
+        <div class="others-box">
+            <div class="others-text">
+                <h2>連絡先 | Contact</h2>
+                <p>
+                    Tel: <a href="tel:+81-92-802-3370">+81-92-802-3395</a><br>
+                    E-mail: <a href="mailto:s-fujioka@doc.kyushu-u.ac.jp">s-fujioka@doc.kyushu-u.ac.jp</a></p>
+                <h2>住所 | Adress</h2>
+                <p>九州大学大学院 工学府 土木工学専攻 災害数理研究室<br>
+                    〒819-0395 福岡県福岡市西区元岡744番地
+                    九州大学伊都キャンパス ウエスト2号館11階 1106号室<br>
+                    Disaster Informatics Laboratory, Department of Civil Engineering, Kyushu University<br>
+                    ​744 Motooka Nishi-ku, Fukuoka, 819-0395, Japan​​</p>
+            </div>
+        </div>
+    </div>
+    <button id="backToTop">↑ Top</button>
+    <script src="js/app.js"></script>
 </body>
 </html>
+
