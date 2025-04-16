@@ -2,6 +2,24 @@
     display: none;
 }
 
+/* 初期状態：PC用表示、モバイル用非表示 */
+.pc-only {
+    display: block;
+}
+.mobile-only {
+    display: none;
+}
+
+  /* スマホ用メディアクエリ：モバイル表示、PC非表示 */
+@media (max-width: 767px) {
+    .pc-only {
+    display: none;
+    }
+    .mobile-only {
+    display: block;
+    }
+}
+
 #home .home {
     position: relative; /* 位置をリセット */
     display: block;     /* ブロック表示 */
@@ -496,6 +514,10 @@ a:hover:not(#home) {
     
     .subpage h1:not(#home) {
         font-size: 20px;
+    }
+
+    .subpage h3:not(#home) {
+        font-size: 14px;
     }
     .subpage p:not(#home) {
         font-size: 14px;

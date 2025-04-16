@@ -54,19 +54,32 @@
             </div>
             <div class="profile-text">
             <!-------------------- 氏名 -------------------->
-            <h2>氏名 | Name</h2>
+            <a class="mobile-only"> <br></a>
+            <div class="collapsible-wrapper">
+                <div class="collapsible-header">
+                    <h2 class="collapsible-toggle">氏名 | Name</h2>
+                </div>
+            </div>
             <ul>
                 <li>藤岡 秀二郎 | Shujiro Fujioka</li>
             </ul>
             <!-------------------- 所属 -------------------->
-            <h2>所属 | Affiliation</h2>
+            <div class="collapsible-wrapper">
+                <div class="collapsible-header">
+                    <h2 class="collapsible-toggle">所属 | Affiliation</h2>
+                </div>
+            </div>
             <ul>
             <li>九州大学大学院工学府土木工学専攻博士後期課程 <br>
                 Ph.D. in Engineering, Kyushu University</li>
             <li><a href="https://saigaisuuriken-hp-main.vercel.app/" target="_blank">災害数理研究室</a> | Disaster Informatics Laboratory</li>
             </ul>
             <!-------------------- 学会 -------------------->
-            <h2>所属学会 | Academic Societies</h2>
+            <div class="collapsible-wrapper">
+                <div class="collapsible-header">
+                    <h2 class="collapsible-toggle">所属学会 | Academic Societies</h2>
+                </div>
+            </div>
                 <ul>
                     <li><a href="https://www.jsce.or.jp/" target="_blank">公益社団法人 土木学会</a> <br>
                         Japan Society of Civil Engineers (JSCE)</li>
@@ -94,7 +107,8 @@
                 <!------------------------------------------- 査読有り論文 ------------------------------------------->
                 <div class="collapsible-wrapper">
                     <div class="collapsible-header">
-                        <h2 class="collapsible-toggle">査読有り論文 | Refereed Papers</h2>
+                        <h2 class="collapsible-toggle pc-only">査読有り論文 | Refereed Papers</h2>
+                        <h2 class="collapsible-toggle mobile-only">査読有り論文<br>Refereed Papers</h2>
                         <label class="switch">
                             <input type="checkbox" class="toggle-switch">
                             <span class="slider"></span>
@@ -113,7 +127,8 @@
                 <!------------------------------------------- 査読無し論文 ------------------------------------------->
                 <div class="collapsible-wrapper">
                     <div class="collapsible-header">
-                        <h2 class="collapsible-toggle">査読無し論文 | Non-Refereed Papers</h2>
+                        <h2 class="collapsible-toggle pc-only">査読無し論文 | Non-Refereed Papers</h2>
+                        <h2 class="collapsible-toggle mobile-only">査読無し論文<br>Non-Refereed Papers</h2>
                         <label class="switch">
                             <input type="checkbox" class="toggle-switch">
                             <span class="slider"></span>
@@ -135,7 +150,8 @@
                 <!------------------------------------------- 国際学会 ------------------------------------------->
                 <div class="collapsible-wrapper">
                     <div class="collapsible-header">
-                        <h2 class="collapsible-toggle">国際学会 | International Conferences (*: Presenter)</h2>
+                        <h2 class="collapsible-toggle pc-only">国際学会 | International Conferences</h2>
+                        <h2 class="collapsible-toggle mobile-only">国際学会<br>International Conferences</h2>
                         <label class="switch">
                             <input type="checkbox" class="toggle-switch">
                             <span class="slider"></span>
@@ -143,7 +159,8 @@
                     </div >
                     <div class="collapsible-content">
                 <!------ 2024 ------>
-                        <h3>FY 2024 (April 2024 - March 2025)</h3>
+                        <h3>*: Presenter, FY: April - March</h3>
+                        <h3>FY 2024</h3>
                             <ul>
                                 <li>Tsuji, K.*, <strong class="underline">Fujioka, S.</strong>, Morikawa, D. S. and Asai, M.: Advanced resolved-unresolved SPH-DEM coupling approach with SPH(2) and particle shifting techniques, IWACOM-IV(International Workshops on Advanced of Computational Mechanics), Kita-Kyushu, 2024.09.</li>
                                 <li>Tsuji, K.*, <strong class="underline">Fujioka, S.</strong>, Morikawa, D. S. and Asai, M.: The hybrid resolved-unresolved SPH(2)-DEM coupling simulation for the internal soil-erosion in soil-structures, 16th WCCM, Vancouver, Canada, 2024.07.</li>
@@ -170,7 +187,8 @@
                 <!------------------------------------------- 国内学会 ------------------------------------------->
                 <div class="collapsible-wrapper">
                     <div class="collapsible-header">
-                        <h2 class="collapsible-toggle">国内学会 | Domestic Conferences (*: Presenter)</h2>
+                        <h2 class="collapsible-toggle pc-only">国内学会 | Domestic Conferences</h2>
+                        <h2 class="collapsible-toggle mobile-only">国内学会<br>Domestic Conferences</h2>
                         <label class="switch">
                             <input type="checkbox" class="toggle-switch">
                             <span class="slider"></span>
@@ -178,7 +196,8 @@
                     </div >
                     <div class="collapsible-content">
                 <!------ 2024 ------>
-                        <h3>FY 2024 (April 2024 - March 2024)</h3>
+                        <h3>*: Presenter, FY: April - March</h3>
+                        <h3>FY 2024</h3>
                             <ul>
                                 <li>松永幸大*, <strong class="underline">藤岡秀二郎</strong>, 辻勲平, 浅井光輝：壁境界条件を含む空間離散化スキームのLSSPH法への適用，令和6年度土木学会西部支部研究発表会，沖縄，2024.03.</li>
                                 <li>鈴木新之助*, 井上恵天, <strong class="underline">藤岡秀二郎</strong>, 辻勲平, 浅井光輝：SPH(2)と密度保存型粒子再配列法を併用した高精度浸透流解析，令和6年度土木学会全国大会第79回年次学術講演会，宮城，2024.09.</li>
@@ -219,13 +238,15 @@
                 <!------------------------------------------- 招待講演 ------------------------------------------->
                 <div class="collapsible-wrapper">
                     <div class="collapsible-header">
-                        <h2 class="collapsible-toggle">招待講演 | Invited Talks</h2>
+                        <h2 class="collapsible-toggle pc-only">招待講演 | Invited Talks</h2>
+                        <h2 class="collapsible-toggle mobile-only">招待講演<br>Invited Talks</h2>
                         <label class="switch">
                             <input type="checkbox" class="toggle-switch">
                             <span class="slider"></span>
                         </label>
                     </div >
                     <div class="collapsible-content">
+                        <h3>*: Presenter</h3>
                         <ul>
                             <li><strong class="underline">藤岡秀二郎</strong>*：高精度粒子法SPH(2)と座標変換の適用による計算効率の向上，日本計算工学会 夏季学生講演会 2024，茨城，2024.09.</li>
                             <li>Asai, M.*, <strong class="underline">Fujioka, S.</strong> and Morikawa, D. S.: A high-performance particle simulator based on SPH(2) accelerating with a geometric multi-grid solver, IWACOM-IV(International Workshops on Advanced of Computational Mechanics), Kita-Kyushu, 2024.09.</li>
@@ -253,11 +274,19 @@
         <h1>Contact</h1>
         <div class="others-box">
             <div class="others-text">
-                <h2>連絡先 | Contact</h2>
+                <div class="collapsible-wrapper">
+                    <div class="collapsible-header">
+                        <h2 class="collapsible-toggle">連絡先 | Contact</h2>
+                    </div>
+                </div>
                 <p>
                     Tel: <a href="tel:+81-92-802-3370">+81-92-802-3395</a><br>
                     E-mail: <a href="mailto:s-fujioka@doc.kyushu-u.ac.jp">s-fujioka@doc.kyushu-u.ac.jp</a></p>
-                <h2>住所 | Adress</h2>
+                <div class="collapsible-wrapper">
+                    <div class="collapsible-header">
+                        <h2 class="collapsible-toggle">住所 | Adress</h2>
+                    </div>
+                </div>
                 <p>九州大学大学院 工学府 土木工学専攻 災害数理研究室<br>
                     〒819-0395 福岡県福岡市西区元岡744番地
                     九州大学伊都キャンパス ウエスト2号館11階 1106号室<br>
