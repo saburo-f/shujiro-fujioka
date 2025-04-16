@@ -14,9 +14,9 @@ document.querySelectorAll('[data-target]').forEach(link => {
         e.preventDefault();
         const target = this.getAttribute('data-target');
 
-        // CSS切り替え
-        const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
-        document.getElementById('dynamic-css').setAttribute('href', newCss);
+        // // CSS切り替え
+        // const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
+        // document.getElementById('dynamic-css').setAttribute('href', newCss);
 
         // セクションの表示切り替え
         toggleVisibility(target);
