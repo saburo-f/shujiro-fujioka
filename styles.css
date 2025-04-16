@@ -122,6 +122,19 @@
         align-items: center; /* 中央揃えにする */
         color: #fff;
     }   
+    #home .english-name {
+        font-size: 20px; /* 英語の名前のフォントサイズ */
+    }
+    
+    #home .japanese-name {
+        margin-bottom: -80px;
+        font-size: 30px; /* 日本語の名前のフォントサイズ */
+    }
+    #home li {
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #fff;
+    }
 }
 
 #home a {
