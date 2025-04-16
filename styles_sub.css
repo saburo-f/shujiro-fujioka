@@ -1,6 +1,22 @@
 /* styles_sub.css */
 /* フェードイン/フェードアウトのアニメーション */
 
+/* 折りたたみ可能なコンテンツ */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* 開いている状態 */
+.collapsible-content.open {
+    max-height: 1000px; /* 必要に応じて大きな値に設定、コンテンツがそれ以上の高さになることはない */
+    opacity: 1;
+}
+
+
+
 body,html {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -128,6 +144,14 @@ header {
   padding-left: 60px; /* 見出しの左側に縦棒を追加 */
   position: relative; /* 相対位置指定 */
 }
+
+.others-text h2 {
+  text-align: left; /* プロフィールテキストを左揃えに設定 */
+  margin-left: -20px; /* 縦棒の分だけ左にずらす */
+  padding-left: 60px; /* 見出しの左側に縦棒を追加 */
+  position: relative; /* 相対位置指定 */
+}
+
 .others-text h3 {
   text-align: left; /* プロフィールテキストを左揃えに設定 */
   margin-left: -20px; /* 縦棒の分だけ左にずらす */
@@ -413,3 +437,6 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 下に影を追加 */
 }
 
+a {
+  text-decoration: none; /* 下線を消す */
+}

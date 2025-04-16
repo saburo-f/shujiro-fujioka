@@ -5,6 +5,20 @@
     margin: 0;          /* マージンをリセット */
     padding: 0;         /* パディングをリセット */
 }
+/* フェードインのアニメーション */
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* フェードインのキーフレーム */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
 body, html {
@@ -88,16 +102,6 @@ li {
     color: #fff;
 }
 
-a {
-    text-decoration: none;
-    color: #ddd;
-    /* color: #fff; */
-}
-
-a:hover {
-    color: #666;
-}
-
 .english-name {
     font-size: 24px; /* 英語の名前のフォントサイズ */
 }
@@ -149,12 +153,4 @@ transform: scaleX(1);
 
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    /* font-family: "Georgia", serif; */
 }
-/* .japanese-name {
-    font-family: "Noto Serif JP", serif;
-} */
-
-/* .english-name {
-    font-family: "Georgia", serif;
-} */

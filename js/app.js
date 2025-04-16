@@ -23,6 +23,7 @@ document.querySelectorAll('[data-target]').forEach(link => {
 
         // URLを変更（ページ遷移を模倣）
         const newUrl = `https://shujiro-fujioka.vercel.app/${target}`;
+        // const newUrl = `#${target}`;
         history.pushState({ target: target }, '', newUrl);
     });
 });
@@ -47,12 +48,21 @@ function toggleVisibility(target) {
     // 全セクションを非表示
     document.querySelectorAll('.subpage').forEach(section => {
         section.style.display = 'none';
+        section.classList.remove('page-active'); // アクティブ状態を解除
+        section.classList.add('page-transition'); // アニメーションの追加
     });
 
     // 対象セクションを表示
     const section = document.getElementById(target);
     if (section) {
         section.style.display = 'block';
+        section.classList.remove('page-transition'); // アニメーションを解除
+        section.classList.add('page-active'); // 新しいページをアクティブにする
+
+        // home に戻るときのみアニメーションを追加
+        if (target === 'home') {
+            section.classList.add('fade-in'); // フェードインアニメーションを追加
+        }
     }
 }
 
@@ -65,3 +75,24 @@ window.addEventListener('popstate', function(event) {
     const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
     document.getElementById('dynamic-css').setAttribute('href', newCss);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const headings = document.querySelectorAll("#publication h2");
+
+    headings.forEach(h2 => {
+        const content = h2.nextElementSibling;
+
+        if (content) {
+            content.classList.add("collapsible-content"); // 初期状態で折りたたみ用クラスを適用
+        }
+
+        h2.style.cursor = "pointer"; // カーソル変更でわかりやすく
+
+        h2.addEventListener("click", function () {
+            if (content) {
+                content.classList.toggle("open"); // クリックで開閉する
+            }
+        });
+    });
+});
+
