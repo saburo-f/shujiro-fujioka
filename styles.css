@@ -1,4 +1,4 @@
-#home .home {
+.home {
     position: relative; /* 位置をリセット */
     display: block;     /* ブロック表示 */
     width: 100%;        /* 幅を100%に設定 */
