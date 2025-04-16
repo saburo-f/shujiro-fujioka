@@ -576,7 +576,7 @@ transform: scaleX(1);
   outline: none; /* フォーカス時のアウトラインを消す */
 }
 
-header {
+header:not(#home) {
   display: flex;
   justify-content: space-between;
   align-items: center;
