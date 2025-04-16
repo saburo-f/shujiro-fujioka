@@ -22,9 +22,8 @@ document.querySelectorAll('[data-target]').forEach(link => {
         toggleVisibility(target);
 
         // URLを変更（ページ遷移を模倣）
-        const newUrl = `https://shujiro-fujioka.vercel.app/${target}`;
-        // const newUrl = `#${target}`;
-        history.pushState({ target: target }, '', newUrl);
+        history.pushState({ target: target }, '', '?page=' + target);
+
     });
 });
 
