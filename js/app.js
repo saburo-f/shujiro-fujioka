@@ -1,100 +1,29 @@
-// 初期表示：subpage を非表示、home を表示
-window.onload = () => {
-    // すべての subpage を非表示にする
-    document.querySelectorAll('.subpage').forEach(section => {
-        section.style.display = 'none';
-    });
-    // home を表示
-    document.getElementById('home').style.display = 'block';
-};
-
-// ページ切り替えイベント
-document.querySelectorAll('[data-target]').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = this.getAttribute('data-target');
-
-        // // CSS切り替え
-        // const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
-        // document.getElementById('dynamic-css').setAttribute('href', newCss);
-
-        // セクションの表示切り替え
-        toggleVisibility(target);
-
-        // URLを変更（ページ遷移を模倣）
-        history.pushState({ target: target }, '', '?page=' + target);
-
-    });
-});
-
-// スクロールで「トップに戻る」ボタン表示
-window.onscroll = function () {
-    const backToTopButton = document.getElementById("backToTop");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopButton.style.display = "block";
-    } else {
-        backToTopButton.style.display = "none";
-    }
-};
-
-// 「トップに戻る」ボタンの動作
-document.getElementById("backToTop").onclick = function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-// セクションの表示切り替えを行う関数
-function toggleVisibility(target) {
-    // 全セクションを非表示
-    document.querySelectorAll('.subpage').forEach(section => {
-        section.style.display = 'none';
-        section.classList.remove('page-active'); // アクティブ状態を解除
-        section.classList.add('page-transition'); // アニメーションの追加
-    });
-
-    // 対象セクションを表示
-    const section = document.getElementById(target);
-    if (section) {
-        section.style.display = 'block';
-        section.classList.remove('page-transition'); // アニメーションを解除
-        section.classList.add('page-active'); // 新しいページをアクティブにする
-
-        // home に戻るときのみアニメーションを追加
-        if (target === 'home') {
-            section.classList.add('fade-in'); // フェードインアニメーションを追加
-        }
-    }
-    window.scrollTo({ top: 0 });
-}
-
-// ブラウザの「戻る」ボタンや「進む」ボタンに対応するための処理
-window.addEventListener('popstate', function(event) {
-    const target = event.state ? event.state.target : 'home'; // デフォルトは home
-    toggleVisibility(target);
-
-    // CSSの変更（ブラウザの履歴に基づく）
-    const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
-    document.getElementById('dynamic-css').setAttribute('href', newCss);
-});
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     document.querySelectorAll(".toggle-switch").forEach((toggle, index) => {
-//         toggle.addEventListener("change", function () {
-//             const wrapper = this.closest(".collapsible-wrapper");
-//             const content = wrapper.querySelector(".collapsible-content");
-//             if (this.checked) {
-//                 content.classList.add("open");
-//             } else {
-//                 content.classList.remove("open");
-//             }
-//         });
-//     });
-// });
 document.addEventListener("DOMContentLoaded", () => {
-    // スイッチの状態によって開閉を切り替える（すでにある処理）
+    // 初期表示：subpage を非表示、home を表示
+    document.querySelectorAll('.subpage').forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById('home').style.display = 'block';
+
+    // ページ切り替えイベント
+    document.querySelectorAll('[data-target]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = this.getAttribute('data-target');
+            toggleVisibility(target);
+            history.pushState({ target: target }, '', '?page=' + target);
+        });
+    });
+
+    // 初期状態でcheckedのスイッチがあれば開く
     document.querySelectorAll(".toggle-switch").forEach((toggle) => {
+        const wrapper = toggle.closest(".collapsible-wrapper");
+        const content = wrapper.querySelector(".collapsible-content");
+        if (toggle.checked) {
+            content.classList.add("open");
+        }
+        // スイッチの状態によって開閉を切り替える
         toggle.addEventListener("change", function () {
-            const wrapper = this.closest(".collapsible-wrapper");
-            const content = wrapper.querySelector(".collapsible-content");
             if (this.checked) {
                 content.classList.add("open");
             } else {
@@ -108,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.addEventListener("click", function (e) {
             const toggle = wrapper.querySelector(".toggle-switch");
 
-            // スイッチやそのラベル部分をクリックした場合は二重トグルを防ぐ
             if (
                 e.target.classList.contains("toggle-switch") ||
                 e.target.classList.contains("slider")
@@ -116,11 +44,51 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // チェック状態をトグル
             toggle.checked = !toggle.checked;
-
-            // 明示的に change イベントも発火させる（開閉が連動するように）
             toggle.dispatchEvent(new Event("change"));
         });
     });
+
+    // トップに戻るボタンの動作
+    document.getElementById("backToTop").onclick = function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // スクロールで「トップに戻る」ボタン表示
+    window.onscroll = function () {
+        const backToTopButton = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+});
+
+// セクションの表示切り替え関数
+function toggleVisibility(target) {
+    // すべて非表示にする
+    document.querySelectorAll('.subpage').forEach(section => {
+        section.style.display = 'none';
+        section.classList.remove('page-active');
+        section.classList.add('page-transition');
+    });
+
+    const section = document.getElementById(target);
+    if (section) {
+        section.style.display = 'block';
+        section.classList.remove('page-transition');
+        section.classList.add('page-active');
+        if (target === 'home') {
+            section.classList.add('fade-in');
+        }
+    }
+
+    window.scrollTo({ top: 0 });
+}
+
+// 戻る・進むボタン対応
+window.addEventListener('popstate', function (event) {
+    const target = event.state ? event.state.target : 'home';
+    toggleVisibility(target);
 });

@@ -2,7 +2,7 @@
     display: none;
 }
 .collapsible-header {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /* 初期状態：PC用表示、モバイル用非表示 */
