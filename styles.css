@@ -180,7 +180,7 @@ transform: scaleX(1);
 
 /* 開いている状態 */
 .collapsible-content.open:not(#home) {
-    max-height: 1000px; /* 必要に応じて大きな値に設定、コンテンツがそれ以上の高さになることはない */
+    max-height: 10000px; /* 必要に応じて大きな値に設定、コンテンツがそれ以上の高さになることはない */
     opacity: 1;
 }
 
