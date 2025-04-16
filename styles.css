@@ -1,147 +1,5 @@
-#home .home {
-    position: relative; /* 位置をリセット */
-    display: block;     /* ブロック表示 */
-    width: 100%;        /* 幅を100%に設定 */
-    margin: 0;          /* マージンをリセット */
-    padding: 0;         /* パディングをリセット */
-}
 
-#home body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-#home .subpage {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    display: flex;
-}
-
-#home .video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-#home .video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-}
-
-
-#home .left {
-    position: relative;
-    z-index: 1;
-    width: 30%; /* 左側の幅を50%に設定 */
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* 左半分の背景色（透過度を0.5に設定） */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* 中央揃えにする */
-    color: #fff;
-}
-
-#home .right {
-    flex: 1;
-    /* 右半分は空白 */
-}
-
-#home .header {
-    padding: 20px;
-    text-align: center; /* 左半分の文字列を中央揃えにする */
-}
-
-#home .footer {
-    padding: 20px;
-}
-
-#home .links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; /* リンクのテキストを中央揃えにする */
-}
-
-#home ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#home li {
-    margin-bottom: 20px;
-    font-size: 20px;
-    color: #fff;
-}
-
-#home .english-name {
-    font-size: 24px; /* 英語の名前のフォントサイズ */
-}
-
-#home .japanese-name {
-    margin-bottom: -10px;
-    font-size: 36px; /* 日本語の名前のフォントサイズ */
-}
-@media screen and (max-width: 768px) {
-    #home .left {
-        position: relative;
-        z-index: 1;
-        width: 100%; /* 左側の幅を50%に設定 */
-        background-color: rgba(0, 0, 0, 0.5); /* 左半分の背景色（透過度を0.8に設定） */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; /* 中央揃えにする */
-        color: #fff;
-    }   
-}
-
-#home a {
-    position: relative;
-    text-decoration: none;
-    color: #fff; /* 必要に応じて色を上書き */
-}
-
-#home a::after {
-content: '';
-position: absolute;
-left: 0;
-bottom: -5px;
-width: 100%;
-height: 1px;
-background-color: #fff;
-transform: scaleX(0);
-transition: transform 0.3s ease;
-transform-origin: center;
-}
-
-#home a:hover{
-  color: #999; /* ホバー時にリンクの色をグレーに変更 */
-}
-#home a:hover::after {
-transform: scaleX(1);
-}
-    
-
-#home body {
-    font-family: 'Helvetica Neue', sans-serif;
-}
-
-
-/* ----------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
 /* styles_sub.css */
 /* フェードイン/フェードアウトのアニメーション */
 
@@ -584,3 +442,157 @@ header {
 a {
   text-decoration: none; /* 下線を消す */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+#home .home {
+    position: relative; /* 位置をリセット */
+    display: block;     /* ブロック表示 */
+    width: 100%;        /* 幅を100%に設定 */
+    margin: 0;          /* マージンをリセット */
+    padding: 0;         /* パディングをリセット */
+}
+
+#home body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#home .subpage {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+}
+
+#home .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#home .video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+
+#home .left {
+    position: relative;
+    z-index: 1;
+    width: 30%; /* 左側の幅を50%に設定 */
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 左半分の背景色（透過度を0.5に設定） */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 中央揃えにする */
+    color: #fff;
+}
+
+#home .right {
+    flex: 1;
+    /* 右半分は空白 */
+}
+
+#home .header {
+    padding: 20px;
+    text-align: center; /* 左半分の文字列を中央揃えにする */
+}
+
+#home .footer {
+    padding: 20px;
+}
+
+#home .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* リンクのテキストを中央揃えにする */
+}
+
+#home ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#home li {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+
+#home .english-name {
+    font-size: 24px; /* 英語の名前のフォントサイズ */
+}
+
+#home .japanese-name {
+    margin-bottom: -10px;
+    font-size: 36px; /* 日本語の名前のフォントサイズ */
+}
+@media screen and (max-width: 768px) {
+    #home .left {
+        position: relative;
+        z-index: 1;
+        width: 100%; /* 左側の幅を50%に設定 */
+        background-color: rgba(0, 0, 0, 0.5); /* 左半分の背景色（透過度を0.8に設定） */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* 中央揃えにする */
+        color: #fff;
+    }   
+}
+
+#home a {
+    position: relative;
+    text-decoration: none;
+    color: #fff; /* 必要に応じて色を上書き */
+}
+
+#home a::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -5px;
+width: 100%;
+height: 1px;
+background-color: #fff;
+transform: scaleX(0);
+transition: transform 0.3s ease;
+transform-origin: center;
+}
+
+#home a:hover{
+  color: #999; /* ホバー時にリンクの色をグレーに変更 */
+}
+#home a:hover::after {
+transform: scaleX(1);
+}
+    
+
+#home body {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
