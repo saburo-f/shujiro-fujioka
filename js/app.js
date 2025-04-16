@@ -15,20 +15,20 @@ document.querySelectorAll('[data-target]').forEach(link => {
         e.preventDefault();
         const target = this.getAttribute('data-target');
 
-        // CSS切り替え
-        const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
-        const dynamicCss = document.getElementById('dynamic-css');
-        const tempCss = document.createElement('link');
-        tempCss.rel = 'stylesheet';
-        tempCss.href = newCss;
+        // // CSS切り替え
+        // const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
+        // const dynamicCss = document.getElementById('dynamic-css');
+        // const tempCss = document.createElement('link');
+        // tempCss.rel = 'stylesheet';
+        // tempCss.href = newCss;
 
-        // CSSが読み込まれた後に切り替えを行う
-        tempCss.onload = () => {
-            dynamicCss.href = newCss;
-            document.head.removeChild(tempCss);
-        };
+        // // CSSが読み込まれた後に切り替えを行う
+        // tempCss.onload = () => {
+        //     dynamicCss.href = newCss;
+        //     document.head.removeChild(tempCss);
+        // };
 
-        document.head.appendChild(tempCss);
+        // document.head.appendChild(tempCss);
 
         // セクションの表示切り替え
         toggleVisibility(target);
