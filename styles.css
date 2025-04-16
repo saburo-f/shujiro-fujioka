@@ -207,7 +207,7 @@ header:not(#home) {
 }
 
 .subpage p:not(#home) {
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .left:not(#home), .right:not(#home) {
