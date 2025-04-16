@@ -9,24 +9,34 @@ window.onload = () => {
 };
 
 // ページ切り替えイベント
+
 document.querySelectorAll('[data-target]').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = this.getAttribute('data-target');
-
-        // CSS切り替え
-        const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
-        document.getElementById('dynamic-css').setAttribute('href', newCss);
-
-        // セクションの表示切り替え
-        toggleVisibility(target);
-
-        // URLを変更（ページ遷移を模倣）
-        const newUrl = `https://shujiro-fujioka.vercel.app/${target}`;
-        // const newUrl = `#${target}`;
-        history.pushState({ target: target }, '', newUrl);
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = this.getAttribute('data-target');
+    
+            // 一時的にスタイルを無効にする
+            const dynamicCss = document.getElementById('dynamic-css');
+            dynamicCss.disabled = true;
+    
+            // CSS切り替え
+            const newCss = (target === 'home') ? 'styles.css' : 'styles_sub.css';
+            dynamicCss.setAttribute('href', newCss);
+    
+            // CSSが読み込まれた後にスタイルを有効にする
+            dynamicCss.onload = () => {
+                dynamicCss.disabled = false;
+            };
+    
+            // セクションの表示切り替え
+            toggleVisibility(target);
+    
+            // URLを変更（ページ遷移を模倣）
+            const newUrl = `https://shujiro-fujioka.vercel.app/${target}`;
+            history.pushState({ target: target }, '', newUrl);
+        });
     });
-});
+    
 
 // スクロールで「トップに戻る」ボタン表示
 window.onscroll = function () {
