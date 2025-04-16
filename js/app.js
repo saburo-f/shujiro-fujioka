@@ -1,12 +1,12 @@
 // 初期表示：subpage を非表示、home を表示
-window.onload = () => {
-    // すべての subpage を非表示にする
-    // document.querySelectorAll('.subpage').forEach(section => {
-    //     section.style.display = 'none';
-    // });
-    // home を表示
+document.addEventListener("DOMContentLoaded", function () {
+    // 初期表示：subpage を非表示、home を表示
+    document.querySelectorAll('.subpage').forEach(section => {
+        section.style.display = 'none';
+    });
     document.getElementById('home').style.display = 'block';
-};
+});
+
 
 // ページ切り替えイベント
 
