@@ -123,17 +123,16 @@
         color: #fff;
     }   
     #home .english-name {
-        font-size: 20px; /* 英語の名前のフォントサイズ */
+        font-size: 16px; /* 英語の名前のフォントサイズ */
     }
     
     #home .japanese-name {
         margin-bottom: -80px;
-        margin-top: 200px;
-        font-size: 30px; /* 日本語の名前のフォントサイズ */
+        font-size: 20px; /* 日本語の名前のフォントサイズ */
     }
     #home li {
         margin-bottom: 20px;
-        font-size: 20px;
+        font-size: 16px;
         color: #fff;
     }
 }
