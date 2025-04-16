@@ -376,7 +376,7 @@ a:not(#home) {
 }
 
 li:not(#home) {  
-  font-size: 14px;
+  font-size: 20px;
 }
 
 text:not(#home) {
