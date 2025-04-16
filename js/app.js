@@ -76,17 +76,51 @@ window.addEventListener('popstate', function(event) {
     document.getElementById('dynamic-css').setAttribute('href', newCss);
 });
 
+// document.addEventListener("DOMContentLoaded", () => {
+//     document.querySelectorAll(".toggle-switch").forEach((toggle, index) => {
+//         toggle.addEventListener("change", function () {
+//             const wrapper = this.closest(".collapsible-wrapper");
+//             const content = wrapper.querySelector(".collapsible-content");
+//             if (this.checked) {
+//                 content.classList.add("open");
+//             } else {
+//                 content.classList.remove("open");
+//             }
+//         });
+//     });
+// });
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".toggle-switch").forEach((toggle, index) => {
-      toggle.addEventListener("change", function () {
-        const wrapper = this.closest(".collapsible-wrapper");
-        const content = wrapper.querySelector(".collapsible-content");
-        if (this.checked) {
-          content.classList.add("open");
-        } else {
-          content.classList.remove("open");
-        }
-      });
+    // スイッチの状態によって開閉を切り替える（すでにある処理）
+    document.querySelectorAll(".toggle-switch").forEach((toggle) => {
+        toggle.addEventListener("change", function () {
+            const wrapper = this.closest(".collapsible-wrapper");
+            const content = wrapper.querySelector(".collapsible-content");
+            if (this.checked) {
+                content.classList.add("open");
+            } else {
+                content.classList.remove("open");
+            }
+        });
     });
-  });
-  
+
+    // wrapper 全体クリックでスイッチを切り替える
+    document.querySelectorAll(".collapsible-header").forEach((wrapper) => {
+        wrapper.addEventListener("click", function (e) {
+            const toggle = wrapper.querySelector(".toggle-switch");
+
+            // スイッチやそのラベル部分をクリックした場合は二重トグルを防ぐ
+            if (
+                e.target.classList.contains("toggle-switch") ||
+                e.target.classList.contains("slider")
+            ) {
+                return;
+            }
+
+            // チェック状態をトグル
+            toggle.checked = !toggle.checked;
+
+            // 明示的に change イベントも発火させる（開閉が連動するように）
+            toggle.dispatchEvent(new Event("change"));
+        });
+    });
+});
