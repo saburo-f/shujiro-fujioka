@@ -122,13 +122,13 @@
         align-items: center; /* 中央揃えにする */
         color: #fff;
     }   
-    #home h1 {
+    #home .header h1{
         font-size: 16px; /* 英語の名前のフォントサイズ */
     }
     
-    #home ul {
+    #home .footer ul{
         margin-bottom: 20px;
-        font-size: 16px;
+        font-size: 14px;
         color: #fff;
     }
 }
