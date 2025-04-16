@@ -1,3 +1,7 @@
+#home {
+    padding-top: 0;
+}
+
 #home .home {
     position: relative; /* 位置をリセット */
     display: block;     /* ブロック表示 */
