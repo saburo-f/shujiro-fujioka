@@ -63,6 +63,7 @@ function toggleVisibility(target) {
             section.classList.add('fade-in'); // フェードインアニメーションを追加
         }
     }
+    window.scrollTo({ top: 0 });
 }
 
 // ブラウザの「戻る」ボタンや「進む」ボタンに対応するための処理
@@ -75,23 +76,17 @@ window.addEventListener('popstate', function(event) {
     document.getElementById('dynamic-css').setAttribute('href', newCss);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const headings = document.querySelectorAll("#publication h2");
-
-    headings.forEach(h2 => {
-        const content = h2.nextElementSibling;
-
-        if (content) {
-            content.classList.add("collapsible-content"); // 初期状態で折りたたみ用クラスを適用
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".toggle-switch").forEach((toggle, index) => {
+      toggle.addEventListener("change", function () {
+        const wrapper = this.closest(".collapsible-wrapper");
+        const content = wrapper.querySelector(".collapsible-content");
+        if (this.checked) {
+          content.classList.add("open");
+        } else {
+          content.classList.remove("open");
         }
-
-        h2.style.cursor = "pointer"; // カーソル変更でわかりやすく
-
-        h2.addEventListener("click", function () {
-            if (content) {
-                content.classList.toggle("open"); // クリックで開閉する
-            }
-        });
+      });
     });
-});
-
+  });
+  

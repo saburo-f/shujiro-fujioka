@@ -169,22 +169,79 @@ transform: scaleX(1);
 
 /* styles_sub.css */
 /* フェードイン/フェードアウトのアニメーション */
-
-/* 折りたたみ可能なコンテンツ */
-.collapsible-content:not(#home) {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+/* スイッチのスタイル */
+/* スイッチの見た目 */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
 }
 
-/* 開いている状態 */
-.collapsible-content.open:not(#home) {
-    max-height: 10000px; /* 必要に応じて大きな値に設定、コンテンツがそれ以上の高さになることはない */
-    opacity: 1;
+.switch input {
+display: none;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: 0.4s;
+border-radius: 20px;
+overflow: hidden; /* ←重要！ */
+}
+
+.slider::before {
+content: "";
+position: absolute;
+height: 16px;
+width: 16px;
+left: 2px;
+bottom: 2px;
+background-color: white;
+transition: 0.4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #4CAF50;
+}
+
+input:checked + .slider::before {
+transform: translateX(20px); /* この値もサイズに応じて調整 */
 }
 
 
+/* 折りたたみ本体 */
+.collapsible-content {
+max-height: 0;
+overflow: hidden;
+opacity: 0;
+transition: max-height 0.4s ease, opacity 0.4s ease;
+padding-left: 10px;
+}
+
+.collapsible-content.open {
+max-height: 10000px;
+opacity: 1;
+}
+
+/* h2 + スイッチを横並びに */
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px;
+  }
+
+.collapsible-header h2 {
+    margin: 0;
+    line-height: 1.2;
+}
 
 body:not(#home),html:not(#home) {
     font-family: Arial, sans-serif;
@@ -296,7 +353,7 @@ header:not(#home) {
 .others-box:not(#home) {
   background-color: #fff; /* ボックスの背景色 */
   padding: 20px; /* ボックスの内側の余白 */
-  margin: 20px 15%; /* 上下に20px、左右は自動マージン */
+  margin: 20px auto; /* 上下に20px、左右は自動マージン */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* 影のスタイル */
   max-width: 70%; /* 最大幅をウィンドウの80%に設定 */
 }
@@ -319,6 +376,8 @@ header:not(#home) {
   margin-left: -20px; /* 縦棒の分だけ左にずらす */
   padding-left: 60px; /* 見出しの左側に縦棒を追加 */
   position: relative; /* 相対位置指定 */
+  margin-top: 20px;  /* 上の余白 */
+  margin-bottom: 20px;  /* 下の余白 */
 }
 
 .others-text h3:not(#home) {
@@ -409,7 +468,7 @@ a:hover:not(#home) {
 /* ============================================= media ============================================================= */
 
 @media screen and (max-width: 768px) {
-    
+
     body:not(#home) {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -435,6 +494,9 @@ a:hover:not(#home) {
       justify-content: flex-end;
     }
     
+    .subpage h1:not(#home) {
+        font-size: 20px;
+    }
     .subpage p:not(#home) {
         font-size: 14px;
     }
@@ -477,9 +539,9 @@ a:hover:not(#home) {
     margin-left: 5%; /* 縦棒の分だけ左にずらす */
     padding-left: 20px; /* 見出しの左側に縦棒を追加 */
     position: relative; /* 相対位置指定 */
-    font-size: 20px;
+    font-size: 14px;
   }
-  
+
   .profile-text ul li:not(#home) {
     text-align: left; /* プロフィールテキストを左揃えに設定 */
     margin-bottom: 20px; /* 箇条書き項目の間にマージンを追加 */
@@ -523,7 +585,9 @@ a:hover:not(#home) {
     margin-left: 5%; /* 縦棒の分だけ左にずらす */
     padding-left: 20px; /* 見出しの左側に縦棒を追加 */
     position: relative; /* 相対位置指定 */
-    font-size: 20px;
+    font-size: 14px;
+    margin-top: 10px;  /* 上の余白 */
+    margin-bottom: 10px;  /* 下の余白 */
   }
   
   .others-text ul li:not(#home) {
@@ -550,7 +614,8 @@ a:hover:not(#home) {
     width: 3px; /* 縦棒の幅 */
     height: 100%; /* 高さを100%に設定 */
     background-color: #50C878; /* 縦棒の色 */
-  }
+    }
+
 }
 
 a:not(#home) {
