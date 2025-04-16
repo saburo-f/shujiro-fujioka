@@ -87,7 +87,7 @@
 
 #home li {
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 40px;
     color: #fff;
 }
 
@@ -586,6 +586,6 @@ header:not(#home) {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 下に影を追加 */
 }
 
-a:not(#home) {
+a {
   text-decoration: none; /* 下線を消す */
 }
