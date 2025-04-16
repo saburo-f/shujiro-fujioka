@@ -393,7 +393,7 @@ a:hover:not(#home) {
   text-decoration-color: #fff;
 }
 
-
+/* ============================================= media ============================================================= */
 
 @media screen and (max-width: 768px) {
     
@@ -422,6 +422,11 @@ a:hover:not(#home) {
       justify-content: flex-end;
     }
     
+    .subpage p:not(#home) {
+        font-size: 14px;
+        
+    }
+
     text:not(#home) {
       color: #fff;
       text-decoration: none;
@@ -456,7 +461,7 @@ a:hover:not(#home) {
     margin-left: 5%; /* 縦棒の分だけ左にずらす */
     padding-left: 20px; /* 見出しの左側に縦棒を追加 */
     position: relative; /* 相対位置指定 */
-    font-size: 14px;
+    font-size: 20px;
   }
   
   .profile-text ul li:not(#home) {
@@ -502,7 +507,7 @@ a:hover:not(#home) {
     margin-left: 5%; /* 縦棒の分だけ左にずらす */
     padding-left: 20px; /* 見出しの左側に縦棒を追加 */
     position: relative; /* 相対位置指定 */
-    font-size: 14px;
+    font-size: 20px;
   }
   
   .others-text ul li:not(#home) {
