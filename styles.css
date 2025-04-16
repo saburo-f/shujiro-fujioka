@@ -424,7 +424,10 @@ a:hover:not(#home) {
     
     .subpage p:not(#home) {
         font-size: 14px;
-        
+    }
+
+    .subpage li:not(#home) {
+        font-size: 14px;
     }
 
     text:not(#home) {
