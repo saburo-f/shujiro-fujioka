@@ -367,6 +367,10 @@ header:not(#home) {
   border-bottom: 1px solid black; /* 下線を1pxの実線で描画 */
 }
 
+.color:not(#home) {
+    color:lightcoral; /* 下線を1pxの実線で描画 */
+  }
+
 a:not(#home) {
   color: #fff;
   text-decoration: none;
