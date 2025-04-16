@@ -80,6 +80,7 @@
 }
 
 #home .header {
+    margin-top: -100px;
     padding: 20px;
     text-align: center; /* 左半分の文字列を中央揃えにする */
 }
@@ -126,6 +127,10 @@
         align-items: center; /* 中央揃えにする */
         color: #fff;
     }   
+    #home .header {
+        margin-top: 90px;
+    }
+    
 }
 
 #home a {
