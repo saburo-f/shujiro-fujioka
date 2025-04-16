@@ -456,7 +456,7 @@ a:hover:not(#home) {
     margin-left: 5%; /* 縦棒の分だけ左にずらす */
     padding-left: 20px; /* 見出しの左側に縦棒を追加 */
     position: relative; /* 相対位置指定 */
-    font-size: 20px;
+    font-size: 14px;
   }
   
   .profile-text ul li:not(#home) {
@@ -502,7 +502,7 @@ a:hover:not(#home) {
     margin-left: 5%; /* 縦棒の分だけ左にずらす */
     padding-left: 20px; /* 見出しの左側に縦棒を追加 */
     position: relative; /* 相対位置指定 */
-    font-size: 20px;
+    font-size: 14px;
   }
   
   .others-text ul li:not(#home) {
