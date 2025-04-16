@@ -1,3 +1,7 @@
+#profile, #publication, #contact {
+    display: none;
+}
+
 #home .home {
     position: relative; /* 位置をリセット */
     display: block;     /* ブロック表示 */
@@ -122,15 +126,6 @@
         align-items: center; /* 中央揃えにする */
         color: #fff;
     }   
-    #home .header h1{
-        font-size: 16px; /* 英語の名前のフォントサイズ */
-    }
-    
-    #home .footer ul{
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: #fff;
-    }
 }
 
 #home a {
