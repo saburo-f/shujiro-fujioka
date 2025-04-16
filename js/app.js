@@ -1,9 +1,9 @@
 // 初期表示：subpage を非表示、home を表示
 window.onload = () => {
     // すべての subpage を非表示にする
-    document.querySelectorAll('.subpage').forEach(section => {
-        section.style.display = 'none';
-    });
+    // document.querySelectorAll('.subpage').forEach(section => {
+    //     section.style.display = 'none';
+    // });
     // home を表示
     document.getElementById('home').style.display = 'block';
 };
