@@ -1,4 +1,4 @@
-.home {
+#home .home {
     position: relative; /* 位置をリセット */
     display: block;     /* ブロック表示 */
     width: 100%;        /* 幅を100%に設定 */
@@ -6,7 +6,7 @@
     padding: 0;         /* パディングをリセット */
 }
 
-#home body, html {
+#home body,#home html {
     margin: 0;
     padding: 0;
     height: 100%;
