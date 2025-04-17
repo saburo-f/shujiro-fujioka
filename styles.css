@@ -193,10 +193,6 @@ transform: scaleX(1);
 }
     
 
-#home body {
-    font-family: 'Helvetica Neue', sans-serif;
-    /* font-family: 'Arial', sans-serif; */
-}
 
 /* ============================================================================================================================== */
 
@@ -277,7 +273,6 @@ opacity: 1;
 }
 
 body:not(#home),html:not(#home) {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -503,7 +498,6 @@ a:hover:not(#home) {
 @media screen and (max-width: 768px) {
 
     body:not(#home) {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     }
