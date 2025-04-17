@@ -14,7 +14,7 @@
     <meta property="og:description" content="九州大学大学院工学府土木工学専攻博士後期課程　藤岡秀二郎（Shujiro FUJIOKA）の個人ホームページです．">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shujiro-fujioka.vercel.app/">
-    <meta property="og:image" content="https://shujiro-fujioka.vercel.app/profile.jpg"> <!-- SNSで表示するサムネ画像 -->
+    <meta property="og:image" content="https://shujiro-fujioka.vercel.app/profile.jpg">
 </head>
 <body>
 <!------------------------------------------------------------------- home ------------------------------------------------------------------->
@@ -57,7 +57,11 @@
         <h1>Profile</h1>
         <div class="profile-box">
             <div class="profile-image">
-                <img src="profile.jpg" alt="Shujiro Fujioka Profile Photo">
+                <picture>
+                    <source srcset="profile.webp" type="image/webp">
+                    <source srcset="profile.jpg" type="image/jpeg">
+                    <img src="profile.jpg" alt="Shujiro Fujioka Profile Photo">
+                </picture>
             </div>
             <div class="profile-text">
             <!-------------------- 氏名 -------------------->
