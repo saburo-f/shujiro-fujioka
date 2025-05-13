@@ -1,3 +1,29 @@
+/* 共通スタイル */
+.search-input {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: 2px solid #000000;
+  border-radius: 0px;
+  outline: none;
+  width: 100%; /* デフォルトで幅100% */
+  max-width: 300px; /* 最大幅はPC向けに設定 */
+}
+
+/* PC専用スタイル（画面幅が601px以上） */
+@media (min-width: 769px) {
+  .search-input {
+      max-width: 300px;
+  }
+}
+
+/* モバイル専用スタイル（画面幅が600px以下） */
+@media (max-width: 768px) {
+  .search-input {
+      max-width: 200px;
+  }
+}
+
+
 #profile, #publication, #contact {
     display: none;
 }

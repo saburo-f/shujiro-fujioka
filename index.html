@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shujiro-fujioka.vercel.app/">
     <meta property="og:image" content="https://shujiro-fujioka.vercel.app/profile.jpg">
-    <meta name="robots" content="index, follow">
 </head>
 <body>
 <!------------------------------------------------------------------- home ------------------------------------------------------------------->
@@ -119,6 +118,13 @@
             </div>
         </header>        
         <h1>Publications</h1>
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="searchInput" placeholder="Enter keywords..." 
+                onkeyup="filterPublications()" 
+                class="search-input">
+            <p id="hitCount" style="margin-top: 10px; font-size: 16px; color: #333;"></p>
+        </div>
+
         <div class="others-box">
             <div class="others-text">
                 <!------------------------------------------- 査読有り論文 ------------------------------------------->
@@ -127,7 +133,7 @@
                         <h2 class="collapsible-toggle pc-only">査読有り論文 | Peer-reviewed Papers</h2>
                         <h2 class="collapsible-toggle mobile-only">査読有り論文<br>Peer-reviewed Papers</h2>
                         <label class="switch">
-                            <input type="checkbox" class="toggle-switch" >
+                            <input type="checkbox" class="toggle-switch" checked>
                             <span class="slider"></span>
                         </label>
                     </div>
@@ -147,7 +153,7 @@
                         <h2 class="collapsible-toggle pc-only">査読無し論文 | Non-reviewed Papers</h2>
                         <h2 class="collapsible-toggle mobile-only">査読無し論文<br>Non-reviewed Papers</h2>
                         <label class="switch">
-                            <input type="checkbox" class="toggle-switch" >
+                            <input type="checkbox" class="toggle-switch" checked>
                             <span class="slider"></span>
                         </label>
                     </div >
@@ -170,7 +176,7 @@
                         <h2 class="collapsible-toggle pc-only">国際学会 | International Conferences</h2>
                         <h2 class="collapsible-toggle mobile-only">国際学会<br>International Conferences</h2>
                         <label class="switch">
-                            <input type="checkbox" class="toggle-switch" >
+                            <input type="checkbox" class="toggle-switch" checked>
                             <span class="slider"></span>
                         </label>
                     </div >
@@ -208,7 +214,7 @@
                         <h2 class="collapsible-toggle pc-only">国内学会 | Domestic Conferences</h2>
                         <h2 class="collapsible-toggle mobile-only">国内学会<br>Domestic Conferences</h2>
                         <label class="switch">
-                            <input type="checkbox" class="toggle-switch" >
+                            <input type="checkbox" class="toggle-switch" checked>
                             <span class="slider"></span>
                         </label>
                     </div >
@@ -260,7 +266,7 @@
                         <h2 class="collapsible-toggle pc-only">招待講演 | Invited Talks</h2>
                         <h2 class="collapsible-toggle mobile-only">招待講演<br>Invited Talks</h2>
                         <label class="switch">
-                            <input type="checkbox" class="toggle-switch" >
+                            <input type="checkbox" class="toggle-switch" checked>
                             <span class="slider"></span>
                         </label>
                     </div >
@@ -317,23 +323,128 @@
 
     <button id="backToTop">↑ Top</button>
     <script src="js/app.js"></script>
-    <!-- <script>
-        const video = document.getElementById('bg-video');
-        let startTime = Date.now();
-
-        function animateHue() {
-            const now = Date.now();
-            const elapsed = (now - startTime) / 1000; // 秒数
-
-            const hue = (elapsed * 5) % 360; // 1秒あたり30度回転（12秒で1周）
-
-            video.style.filter = `hue-rotate(${hue}deg)`;
-
-            requestAnimationFrame(animateHue); // 次のフレームで再実行
+    <style>
+        .highlight {
+            background-color: yellow; /* ハイライト色 */
+            color: black;
+            font-weight: bold;
+            padding: 2px 4px;
+            padding: 0px 0px;
+            border-radius: 4px;
         }
+    </style>
+    <style>
+        #searchInput {
+            padding: 10px 16px;
+            width: 300px;
+            font-size: 16px;
+            border: 2px solid #000000;  /* 緑色の枠線 */
+            outline: none;
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+        
+        /* フォーカス時に光る効果 */
+        #searchInput:focus {
+            border-color: #000000;
+            box-shadow: 0 0 8px rgba(72, 187, 120, 0.7);
+            box-shadow: 0 0 8px #000000;
+        }
+        </style>
 
-        animateHue();
-    </script> -->
+
+        <script>
+            function filterPublications() {
+                const input = document.getElementById("searchInput").value.toLowerCase().trim();
+                const keywords = input.split(/[ 　]+/).filter(k => k);
+            
+                const sections = document.querySelectorAll("#publication .collapsible-content");
+                let totalHits = 0;
+            
+                sections.forEach(section => {
+                    const items = section.querySelectorAll("li");
+                    let hasVisibleItem = false;
+            
+                    items.forEach(item => {
+                        if (!item.hasAttribute("data-original")) {
+                            item.setAttribute("data-original", item.innerHTML);
+                        }
+            
+                        const originalHTML = item.getAttribute("data-original");
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(originalHTML, 'text/html');
+                        const contentNode = doc.body;
+            
+                        const originalText = contentNode.innerText.toLowerCase();
+            
+                        if (keywords.length === 0) {
+                            item.style.display = "";
+                            item.innerHTML = originalHTML;
+                            hasVisibleItem = true;
+                            totalHits++;
+                        } else {
+                            const isMatch = keywords.every(keyword => originalText.includes(keyword));
+            
+                            if (isMatch) {
+                                item.style.display = "";
+                                const newContent = highlightPreservingTags(contentNode, keywords);
+                                item.innerHTML = "";
+                                item.appendChild(newContent);
+            
+                                hasVisibleItem = true;
+                                totalHits++;
+                            } else {
+                                item.style.display = "none";
+                                item.innerHTML = originalHTML;
+                            }
+                        }
+                    });
+            
+                    const header = section.previousElementSibling;
+                    header.style.display = hasVisibleItem ? "" : "none";
+                    section.style.display = hasVisibleItem ? "" : "none";
+                });
+            
+                const hitCountElement = document.getElementById("hitCount");
+                hitCountElement.textContent = (keywords.length === 0) ? "" : `Hits: ${totalHits}`;
+            }
+            
+            // ✅ <wbr> 対応のハイライト処理
+            function highlightPreservingTags(node, keywords) {
+                if (node.nodeType === 3) { // テキストノードのみ処理
+                    const text = node.nodeValue;
+                    const regex = new RegExp(`(${keywords.map(k => escapeRegex(k)).join('|')})`, 'gi');
+            
+                    // ここで <wbr> のようなタグによる分断を防ぐため、一時的に結合
+                    const parts = text.split(regex);
+                    const fragment = document.createDocumentFragment();
+            
+                    parts.forEach(part => {
+                        if (keywords.some(k => part.toLowerCase() === k.toLowerCase())) {
+                            const span = document.createElement('span');
+                            span.className = 'highlight';
+                            span.textContent = part;
+                            fragment.appendChild(span);
+                        } else {
+                            fragment.appendChild(document.createTextNode(part));
+                        }
+                    });
+            
+                    return fragment;
+                } else if (node.nodeType === 1) {
+                    const fragment = document.createDocumentFragment();
+                    node.childNodes.forEach(child => {
+                        fragment.appendChild(highlightPreservingTags(child, keywords));
+                    });
+                    return fragment;
+                }
+                return node;
+            }
+            
+            // 正規表現用にキーワードをエスケープ
+            function escapeRegex(string) {
+                return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+            </script>
 </body>
 </html>
 
