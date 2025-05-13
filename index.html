@@ -324,7 +324,7 @@
             const now = Date.now();
             const elapsed = (now - startTime) / 1000; // 秒数
 
-            const hue = (elapsed * 1) % 360; // 1秒あたり30度回転（12秒で1周）
+            const hue = (elapsed * 5) % 360; // 1秒あたり30度回転（12秒で1周）
 
             video.style.filter = `hue-rotate(${hue}deg)`;
 
