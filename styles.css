@@ -5,6 +5,14 @@
     cursor: pointer;
 }
 
+@keyframes hueRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+#home .video-background video {
+  animation: hueRotate 28s linear infinite;
+}
+
 /* 初期状態：PC用表示、モバイル用非表示 */
 .pc-only {
     display: block;
@@ -14,7 +22,7 @@
 }
 
   /* スマホ用メディアクエリ：モバイル表示、PC非表示 */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .pc-only {
     display: none;
     }
