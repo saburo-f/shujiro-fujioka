@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".toggle-switch").forEach((toggle) => {
         const wrapper = toggle.closest(".collapsible-wrapper");
         const content = wrapper.querySelector(".collapsible-content");
-        if (toggle.checked) {
-            content.classList.add("open");
-        }
+        // if (toggle.checked) {
+        //     content.classList.add("open");
+        // }
         // スイッチの状態によって開閉を切り替える
         toggle.addEventListener("change", function () {
             if (this.checked) {
