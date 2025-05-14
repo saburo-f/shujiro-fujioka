@@ -456,6 +456,29 @@
                 return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             }
     </script>
+
+    <script>
+        // 動画とポスター画像のセット
+        const mediaSet = [
+            { video: "bg/wave_compress.mp4", poster: "bg/wave_compress.webp" },
+            { video: "bg/test1.mp4", poster: "bg/test1.webp" },
+            { video: "bg/test2.mp4", poster: "bg/test2.webp" },
+            { video: "bg/test3.mp4", poster: "bg/test3.webp" }
+        ];
+    
+        // ランダムに1つ選ぶ
+        const randomMedia = mediaSet[Math.floor(Math.random() * mediaSet.length)];
+    
+        // video 要素と source 要素を取得
+        const videoElement = document.getElementById("bg-video");
+        const sourceElement = document.getElementById("video-source");
+    
+        // 動画とポスターを切り替え
+        sourceElement.src = randomMedia.video;
+        videoElement.poster = randomMedia.poster;
+        videoElement.load();  // 変更を反映
+    </script>
+    
 </body>
 </html>
 
